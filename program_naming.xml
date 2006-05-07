@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"   
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"-->
+<sect1 id="naming"><title>命名规范</title>
+<sect2 id="naming-version"><title>版本号命名</title>
+<para>
+Linux 下的系统开发，受到 Linux 核心编号的影响，很可能采用 &lt;主版本号&gt;.&lt;次版本号&gt;.&lt;修订号&gt; 来命名自己产品的编号。Linux 核心还有一个约定，就是如果次版本号是偶数（如0、2、4等），代表正式版本，如果次版本号是奇数(如1、3、5等)，代表的是开发过程中的测试版本。修订号则相当于 Build 号，用来标识一些小的改动。
+</para>
+<para>
+Windows 下的开发，则可能受到资源文件中 FILEVERSION，PRODUCTVERSION 定义的启发，采用四位版本号。
+</para>
+<para>
+但无论是类似 Linux 的三位版本号还是类似 Windows 程序的四位版本号，一定要能够从版本号反推出源代码的版本号。这就需要有完备的编译管理，使得版本号最后一位的编译号(build number)随每次编译能够自动加一，在 <ulink url="http://www.worldhello.net/doc/nightlybuild/">《Nightly Build Howto》</ulink> 中有介绍。
+</para>
+
+</sect2>
+
+<sect2 id="naming-variable"><title>变量命名</title>
+<sect3><title>规则</title>
+<para>
+变量（还包括宏）的命名规则，比较系统和彻底的有 Windows 编程中用到的匈牙利命名法。匈牙利命名法通过在变量名前面加上相应的小写字母的符号标识作为前缀，标识出变量的作用域，类型等。这些符号可以多个同时使用，顺序是先m_（成员变量），再指针，再简单数据类型，再其他。例如：m_lpszStr, 表示指向一个以0字符结尾的字符串的长指针成员变量。
+
+</para>
+<tip>
+<para>
+有关匈牙利命名法的一点有意思的说明是它的名字的由来。这种命名技术是由一位能干的 Microsoft 程序员查尔斯·西蒙尼(Charles Simonyi) 提出的，他出生在匈牙利。在 Microsoft 公司中和他一起工作的人被教会使用这种约定。这对他们来说一切都很正常。但对那些 Simonyi 领导的项目组之外的人来说却感到很奇特，他们认为这是死板的表达方式，甚至说代有这样奇怪的外观是因为它是用匈牙利文写的。从此这种命名方式就被叫做匈牙利命名法。
+</para>
+</tip>
+<para>
+匈牙利命名法关键是：标识符的名字以一个或者多个小写字母开头作为前缀；前缀之后的是首字母大写的一个单词或多个单词组合，该单词要指明变量的用途。
+</para>
+
+<segmentedlist><title>匈牙利命名法中常用的小写字母的前缀</title>
+<segtitle>前　　缀</segtitle>
+<segtitle>类　　型</segtitle>
+<seglistitem><seg>a      </seg><seg>数组 (Array)                                  </seg></seglistitem>
+<seglistitem><seg>b      </seg><seg>布尔值 (Boolean)                              </seg></seglistitem>
+<seglistitem><seg>by     </seg><seg>字节 (Byte)                                   </seg></seglistitem>
+<seglistitem><seg>c      </seg><seg>有符号字符 (Char)                             </seg></seglistitem>
+<seglistitem><seg>cb     </seg><seg>无符号字符 (Char Byte，没有多少人用)          </seg></seglistitem>
+<seglistitem><seg>cr     </seg><seg>颜色参考值 (ColorRef)                         </seg></seglistitem>
+<seglistitem><seg>cx,cy  </seg><seg>坐标差（长度 ShortInt）                       </seg></seglistitem>
+<seglistitem><seg>dw     </seg><seg>Double Word                                   </seg></seglistitem>
+<seglistitem><seg>fn     </seg><seg>函数                                          </seg></seglistitem>
+<seglistitem><seg>h      </seg><seg>Handle                                        </seg></seglistitem>
+<seglistitem><seg>i      </seg><seg>整型                                          </seg></seglistitem>
+<seglistitem><seg>l      </seg><seg>长整型 (Long Int)                             </seg></seglistitem>
+<seglistitem><seg>lp     </seg><seg>Long Pointer                                  </seg></seglistitem>
+<seglistitem><seg>m_     </seg><seg>类的成员                                      </seg></seglistitem>
+<seglistitem><seg>n      </seg><seg>短整型 (Short Int)                            </seg></seglistitem>
+<seglistitem><seg>np     </seg><seg>Near Pointer                                  </seg></seglistitem>
+<seglistitem><seg>p      </seg><seg>Pointer                                       </seg></seglistitem>
+<seglistitem><seg>s      </seg><seg>字符串型                                      </seg></seglistitem>
+<seglistitem><seg>sz     </seg><seg>以null做结尾的字符串型 (String with Zero End) </seg></seglistitem>
+<seglistitem><seg>w      </seg><seg>Word                                          </seg></seglistitem>
+</segmentedlist>
+
+<para>
+但是在任何情况下，都硬性规定使用匈牙利命名法是迂腐的。尤其是 Unix 编程，在使用没有变量名、关键字自动补齐功能的编辑器，如 vi 下，去敲入大小写混合的变量名是痛苦的。其实只要注意两个原则：1. 含义清晰，不易混淆； 2. 不和其它模块、系统API的命名空间相冲突即可。
+</para>
+
+<orderedlist>
+<listitem>
+<para>
+有意识的为变量名、宏名加上本模块的关键字，就不至于和其它模块、系统API的命名空间相冲突；
+</para>
+<para>
+例如: 宏的名称过短，如："DEBUG" 或 "_DEBUG"，很可能和别的模块，系统模块相冲突；
+</para>
+</listitem>
+<listitem>
+<para>
+局部变量尤其是循环变量外，使用约定俗成的 i,j,k ，没有问题；
+</para>
+</listitem>
+<listitem>
+<para>
+宏、常量、枚举enum，全部用大写字母；
+</para>
+</listitem>
+<listitem>
+<para>
+全局变量加上前缀 "g"，后面跟上首字母大写的单词；
+</para>
+<para>
+全局变量吗，费事一点可以谅解。
+</para>
+</listitem>
+</orderedlist>
+</sect3>
+
+<sect3><title>实例</title>
+<para>
+略...
+</para>
+<!--orderedlist>
+<listitem>
+<para>
+反例：无意义的变量名一
+</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/mahui/1_variables-name.jpg" format="JPEG">
+</imageobject>
+<textobject>
+<phrase>无意义的变量名</phrase>
+</textobject>
+<caption>
+<para>无意义的变量名
+</para>
+</caption>
+</mediaobject>
+</listitem>
+<listitem>
+<para>
+反例：无意义的变量名二
+</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/zhangzb/2_variables-name.jpg" format="JPEG">
+</imageobject>
+<textobject>
+<phrase>无意义的变量名</phrase>
+</textobject>
+<caption>
+<para>无意义的变量名
+</para>
+</caption>
+</mediaobject>
+</listitem>
+</orderedlist--> 
+</sect3>
+</sect2>
+
+<sect2 id="naming-function"><title>函数命名</title>
+<sect3><title>规则</title>
+<orderedlist> 
+<listitem>
+<para>
+属于某一模块的函数，加上前缀，前缀为模块缩写；
+</para>
+</listitem>
+<listitem>
+<para>
+函数名应该表明函数意义，格式为"前缀_名词_动词"；
+</para>
+</listitem>
+</orderedlist> 
+</sect3>
+<sect3><title>实例</title>
+<para>
+略...
+</para>
+<!--orderedlist>
+<listitem>
+<para>
+反例：易混淆的函数名
+</para>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/zhangzb/3_function-name.jpg" format="JPEG">
+</imageobject>
+<textobject>
+<phrase>易混淆的函数名</phrase>
+</textobject>
+<caption>
+<para>易混淆的函数名
+</para>
+</caption>
+</mediaobject>
+</listitem>
+</orderedlist--> 
+</sect3>
+</sect2>
+
+
+<sect2 id="naming-tag"><title>版本控制系统的TAG/Label命名</title>
+<orderedlist> 
+<listitem>
+<para>
+CVS 的 TAG 不能包括如 "." 的特殊字符，因此规定使用由大写字母、数字、下划线、减号组成版本控制系统的 TAG/LABEL 名称；
+</para>
+</listitem>
+<listitem>
+<para>
+TAG/LABEL 要包含一个模块/工程前缀，如果只是简单的 V1，V2，在合并 Repository 时，造成困惑；
+</para>
+</listitem>
+<listitem>
+<para>
+在版本控制系统中建立一个专门记录 TAG/LABEL 的文件，每次打上 TAG 之时，先向该文件追加(append)一行，内容为新的 TAG 名称，CHECKIN，在为代码打上 TAG/LABEL；
+</para>
+<para>
+原因为 CVS 中要查看到 TAG 的创建时间不方便，用此方法便于跟踪；
+</para>
+</listitem>
+<listitem>
+<para>
+还可以在 TAG 名称中加入建立 TAG 的日期，如果这个 TAG 是一个 STICKY TAG，日后不会改动；
+</para>
+</listitem>
+<listitem>
+<para>
+分支 TAG/LABEL 的名称要和其它 TAG 容易区分，如加上前缀 "B-"。
+</para>
+</listitem>
+</orderedlist> 
+</sect2>
+
+</sect1>

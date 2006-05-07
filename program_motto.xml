@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"   
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"-->
+<sect1 id="motto"><title>箴言</title>
+<para>箴言警句一起共勉。
+</para>
+<itemizedlist>
+<listitem>
+<para>程序设计绝对是一门艺术，而不仅仅是一门技术。
+</para>
+</listitem>
+<listitem>
+<para>首先程序设计的出发点是，是给别人看，可读、易理解、好维护，如果你的程序只能自己来维护，到你离开这个程序时，你程序也就与你一起离开了这个世界。
+</para>
+</listitem>
+<listitem>
+<para>为了可读、易理解、好维护，你的程序要有好的设计，而不是一接手就进行东抄抄、西抄抄的写代码工作。
+</para>
+</listitem>
+<listitem>
+<para>写代码是一个工程，程序设计是一种艺术；如果程序员只注重代码，那就象盖房子时的砌砖匠，只知道照图施工而已。世界那么多令人叹为观止的美丽建筑物，那是设计家的艺术杰作，而不是砌砖匠的艺术杰作。
+</para>
+</listitem>
+<listitem>
+<para>Keep It Easy Read and Right (from ibm readbooks)
+</para>
+</listitem>
+<listitem>
+<para>Sometimes good style and efficient runtime performance do not mix. 
+Wherever you face a conflict between the two, choose good style. 
+Hard-to-read programs are
+</para>
+<para>
+<screen>
+hard to debug, 
+        hard to maintain,
+                and hard to get right.
+</screen>
+</para>
+</listitem>
+<listitem>
+<para>Program correctness must always win out over speed.
+</para>
+<para>Make it right before you make it faster.
+</para>
+<para>Keep it right when you make it faster.
+</para>
+<para>Make it clear before you make it faster.
+</para>
+<para>Do not sacrifice clarity for small gains in efficiency.
+</para>
+</listitem>
+<listitem>
+<para>Keep It Simle and Stupid
+</para>
+<screen>
+Knowledge Intergration is Supper Skill
+        What I hear I forget,
+                What I see I remember,
+                        What I do I understand.
+</screen>
+</listitem>
+<listitem>
+<para>whatever style you use, please use it consistently, since a mixture of styles within one program tends to look ugly. If you are contributing changes to an existing program, please follow the style of that program. 
+</para>
+</listitem>
+</itemizedlist>
+</sect1>

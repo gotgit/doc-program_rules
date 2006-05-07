@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"   
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"-->
+<sect1 id="docbook"><title>用DocBook来写文档</title>
+<para>
+参见：<ulink url="http://www.worldhello.net/doc/docbook_howto/">《Docbook Howto》</ulink>。
+</para>
+</sect1>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"   
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"-->
+<sect1 id="makefile"><title>Makefile</title>
+<orderedlist>
+<listitem>
+<para>使用autoconf/automake/autoheader工具
+</para>
+<para>用autoconf/automake/autoheader工具来处理各种移植性的问题，用这些工具
+完成系统配置信息的收集，制作makefile文件。然后在打算编译源码时只需要通过
+“configure; make”这样简单的命令就可以得到干净利落的编译。
+</para>
+</listitem>
+<listitem>
+<para>GNU Makefile
+</para>
+<para>参见<ulink url="http://www.gnu.org/prep/standards.html#SEC48">
+GNU Makefile和configure</ulink>
+</para>
+</listitem>
+<listitem>
+<para>BSD Makefile
+</para>
+<para>参见<ulink url="http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/">
+FreeBSD Porter's Handbook</ulink>
+</para>
+</listitem>
+</orderedlist>
+</sect1>

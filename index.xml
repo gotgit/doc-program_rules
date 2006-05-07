@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"   
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+<!ENTITY author "<ulink url='mailto:johnson.AT.worldhello.net'>Johnson</ulink>">
+<!ENTITY orgname "<ulink url='http://www.worldhello.net'>www.worldhello.net</ulink>">
+<!ENTITY table-indent-isone SYSTEM "program_indent_isone.xml">
+<!ENTITY table-indent-params SYSTEM "program_indent_params.xml">
+<!ENTITY sect-docbook SYSTEM "program_document.xml">
+<!ENTITY sect-motto SYSTEM "program_motto.xml">
+<!ENTITY sect-naming SYSTEM "program_naming.xml">
+<!ENTITY sect-format SYSTEM "program_format.xml">
+<!ENTITY sect-makefile SYSTEM "program_makefile.xml">
+<!ENTITY % vers   SYSTEM "version.xml">
+%vers;
+]>
+<article id="index">
+<articleinfo>
+<title>开发规范参考</title>
+<author><firstname>鑫</firstname><surname>蒋</surname></author>
+<affiliation>
+<orgname>&orgname;</orgname>
+<address><email>johnson.AT.worldhello.net</email></address>
+</affiliation>
+<revhistory>
+<!--revision>
+<revnumber>$Revision: 1.27 $</revnumber>
+<date>$Date: 2003/07/16 06:11:53 $</date>
+<authorinitials>$Author: jiangxin $</authorinitials>
+<revremark>...</revremark>
+</revision-->
+<revision>
+<revnumber>0.9.1</revnumber>
+<date>2003/07/16</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>网友 falls huang 对变量命名提出修改意见。</revremark>
+</revision>
+<revision>
+<revnumber>0.9</revnumber>
+<date>2002/01/11</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>转换到 Docbook 格式</revremark>
+</revision>
+<revision>
+<revnumber>0.8</revnumber>
+<date>2001/10/24</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>增加编程规范</revremark>
+</revision>
+<revision>
+<revnumber>0.7</revnumber>
+<date>2001/08/23</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>用indent格式化</revremark>
+</revision>
+</revhistory>
+<abstract>
+<para>编程风格分强制和建议两种。
+</para>
+<para>强制风格，意为一定需要遵守，推荐风格，意为希望程序员在编码时按照这样的风格。
+</para>
+<para>
+（编译自版本: &doc.revision;，最后更新时间: &doc.lastchange;）
+</para>
+</abstract>
+</articleinfo>
+
+&sect-motto;
+
+&sect-naming;
+
+&sect-format;
+
+&sect-makefile;
+
+&sect-docbook;
+
+<appendix id="appendix-indent">
+<title>不同编程风格参考</title>
+<para>通过indent参数分析，比较自定义风格和GNU，KR，BSD编程风格。
+</para>
+
+&table-indent-params;
+
+<para>$Date: 2003/07/16 06:11:53 $</para>
+
+</appendix>
+
+</article>
