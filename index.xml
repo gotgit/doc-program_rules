@@ -23,9 +23,9 @@
 </affiliation>
 <revhistory>
 <!--revision>
-<revnumber>$Revision: 1.27 $</revnumber>
-<date>$Date: 2003/07/16 06:11:53 $</date>
-<authorinitials>$Author: jiangxin $</authorinitials>
+<revnumber>$Revision$</revnumber>
+<date>$Date$</date>
+<authorinitials>$Author$</authorinitials>
 <revremark>...</revremark>
 </revision-->
 <revision>
@@ -81,7 +81,7 @@
 
 &table-indent-params;
 
-<para>$Date: 2003/07/16 06:11:53 $</para>
+<para>$Date$</para>
 
 </appendix>
 
